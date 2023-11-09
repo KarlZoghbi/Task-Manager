@@ -1,0 +1,91 @@
+body{
+    background-color: #352f5b;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+/* header section */
+.header{
+    text-align: center;
+    margin: 1.5rem auto;
+    color:aliceblue;
+}
+
+.header-title{
+    margin-top: 1.5rem;
+}
+
+.search-input{
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: auto;
+}
+
+/* when class aded from (script.js) the element targeted will be removed */
+.filtered{       
+    display: none; 
+  }
+
+
+input[type=text],
+input[type=text]:focus{
+  color: #fff;
+  border: none;
+  background: rgba(0,0,0,0.2);
+  max-width: 400px;
+}
+
+/* list section */
+
+.list{
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0 ;
+    list-style-type: none;
+}
+
+.list-item{
+    background: #423a6f;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: -1px;
+    border: 1px solid rgba(0,0,0,.125);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete{
+    cursor: pointer;
+  }
+
+/* add section */
+
+.add{
+    text-align: center;
+    margin: 1.5rem auto;
+}
+
+.add-label{
+    color: aliceblue;
+}
+
+.active{
+    color: rgb(70, 162, 131);
+    border: solid rgb(70, 162, 131);
+}

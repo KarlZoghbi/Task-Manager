@@ -36,26 +36,32 @@ list.addEventListener('click', e => {
 
 // search tasks
 
-const filterTasks = term => {
+  // the filter method will go through all of the items and will run the function for each one
+  //we are targeting the tasks(li) that do not match our term(value of the input) 
+  //and we are running a function for each one.The function will add a class to the li.(css/styles.css)ligne36.
+    
 
-  Array.from(list.children).filter((task) => {      // the filter method will go through all of the items and will run the function for each one
-     !task.textContent.includes(term).forEach(task => {  //we are targeting the tasks(li) that do not match our term(value of the input) 
-        task.classList.add('filtered') });                   //and we are running a function for each one.The function will add a class to the li.(css/styles.css)ligne36.
-    });  
-
-  Array.from(list.children).filter((task) => {        //we're still getting an array from list of children and we're still going to filter through each one
-      task.textContent.includes(term).forEach(task => {  //we are getting a new filtered array which has all of the elements that do match and remove that element
-        task.classList.remove('filtered') });          //each one of those we're going to remove the filter the class because we no longer want to hide those.         
-    });
+  //we're still getting an array from list of children and we're still going to filter through each one
+  //we are getting a new filtered array which has all of the elements that do match and remove that element
+  //each one of those we're going to remove the filter the class because we no longer want to hide those.         
+  const filterTasks = (term) => {
+  
+    Array.from(list.children)
+    .filter((task) => !task.textContent.toLowerCase().includes(term))
+    .forEach((task) => task.classList.add('filtered'));
+   
+    Array.from(list.children)
+    .filter((task) => task.textContent.toLowerCase().includes(term))
+    .forEach((task) => task.classList.remove('filtered'));
+    
 };
 
 
 
-
-search.addEventListener('keyup', e => {
-  const term = search.value.trim();    // the term variable is for holding whatever value is typed in the search bar at each keyup the function will run.
-  filterTasks(term)
-});
+search.addEventListener('keyup', () => {
+  const term = search.value.trim().toLowerCase();    // the term variable is for holding whatever value is typed in the search bar at each keyup the function will run.
+  filterTasks(term);
+}); 
 
 // active 
 
